@@ -13,11 +13,11 @@ def download_video():
       yt = YouTube(link)
       video = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first() 
       save_video(video,destino)
-
-
+      print("Descargando...")
+      
 def save_video(video,destino):    
     video.download(destino)
-    print("Se ha descargado los videos"+destino)
+    print("Se ha descargado los videos en:"+destino)
 
 
 if __name__ == "__main__":
